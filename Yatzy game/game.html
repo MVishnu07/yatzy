@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yahtzee Game</title>
+        <link rel="stylesheet" href="style.css" type="text/css"> 
+    </head>
+    <body>
+        <header><h1>Yahtzee</h1></header>
+            <h1>
+                Single player Yatzhee Game:
+            </h1>
+        <div class="column">
+        <div id="dice-container">
+            <button class="die" id="die1" onclick="selectDie(0)"></button>
+            <button class="die" id="die2" onclick="selectDie(1)"></button>
+            <button class="die" id="die3" onclick="selectDie(2)"></button>
+            <button class="die" id="die4" onclick="selectDie(3)"></button>
+            <button class="die" id="die5" onclick="selectDie(4)"></button>
+        </div>
+        <button class="button" id="roll-button">Roll Dice</button>
+        <p>Rolls Left: <span id="rollsLeft">3</span></p>
+        <div>Total: <span id="total">0</span></div>
+        </div>
+        <div class="column">
+        <table>
+            <tr>
+                <th>Blank</th>
+                <th>Player 1</th>
+            </tr>
+            <tr>
+                <td>Ones</td>
+                <td id="ones"></button></td>
+            </tr>
+            <tr>
+                <td>Twos</td>
+                <td id="twos"></td>
+            </tr>
+            <tr>
+                <td>Threes</td>
+                <td id="threes"></td>
+            </tr>
+            <tr>
+                <td>Fours</td>
+                <td id="fours"></td>
+            </tr>
+            <tr>
+                <td>Fives</td>
+                <td id="fives"></td>
+            </tr>
+            <tr>
+                <td>Sixes</td>
+                <td id="sixes"></td>
+            </tr>
+            <tr>
+                <td>Sum</td>
+                <td id="sum"></td>
+            </tr>
+            <tr>
+                <td>Bonus</td>
+                <td id="bonus"></td>
+            </tr>
+            <tr>
+                <td>Three of a kind</td>
+                <td id="threeKind"></td>
+            </tr>
+            <tr>
+                <td>Four of a kind</td>
+                <td id="fourKind"></td>
+            </tr>
+            <tr>
+                <td>Full house</td>
+                <td id="fullHouse"></td>
+            </tr>
+            <tr>
+                <td>Small Straight</td>
+                <td id="sStraight"></td>
+            </tr>
+            <tr>
+                <td>Large Straight</td>
+                <td id="lStraight"></td>
+            </tr>
+            <tr>
+                <td>Chance</td>
+                <td id="chance"></td>
+            </tr>
+            <tr>
+                <td>YAHTZEE</td>
+                <td id="yatzy"></td>
+            </tr>
+            <tfoot>
+            <tr>
+                <td><strong> TOTAL POINTS</strong></td>
+                <td>0</td>
+            </tr>
+            </tfoot>
+        </div>
+        <script src="rules.js"></script>
+    </body>
+</html>
