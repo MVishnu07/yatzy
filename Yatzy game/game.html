@@ -7,94 +7,143 @@
         <link rel="stylesheet" href="style.css" type="text/css"> 
     </head>
     <body>
-        <header><h1>Yahtzee</h1></header>
+       <header><h1>Yahtzee</h1></header>
             <h1>
                 Single player Yatzhee Game:
             </h1>
         <div class="column">
-        <div id="dice-container">
-            <button class="die" id="die1" onclick="selectDie(0)"></button>
-            <button class="die" id="die2" onclick="selectDie(1)"></button>
-            <button class="die" id="die3" onclick="selectDie(2)"></button>
-            <button class="die" id="die4" onclick="selectDie(3)"></button>
-            <button class="die" id="die5" onclick="selectDie(4)"></button>
+            <div id="dice-container">
+                <button class="die" id="die1" onclick="selectDie(0)"></button>
+                <button class="die" id="die2" onclick="selectDie(1)"></button>
+                <button class="die" id="die3" onclick="selectDie(2)"></button>
+                <button class="die" id="die4" onclick="selectDie(3)"></button>
+                <button class="die" id="die5" onclick="selectDie(4)"></button>
+            </div>
+            <button class="rollButton" id="roll-button">Roll Dice</button>
+            <p class="text">Rolls Left: <span id="rollsLeft">3</span></p>
+            <div class="text">Total: <span id="total">0</span></div>
+            <div class="rules"><h2>Yahtzee Rules</h2>
+
+                <p>The objective of YAHTZEE is to get as many points as possible by rolling five dice and getting certain combinations of dice.</p>
+            
+                <h2>Gameplay</h2>
+                <p>In each turn a player may throw the dice up to three times. A player doesn't have to roll all five dice on the second and third throw of a round, he may put as many dice as he wants to the side and only throw the ones that don't have the numbers he's trying to get. For example, a player throws and gets 1,3,3,4,6. He decides he wants to try for the large straight, 1,2,3,4,5. So, he puts 1,3,4 to the side and only throws 3 and 6 again, hoping to get 2 and 5.</p>
+                <p>In this game you click on the dice you want to keep. They will be moved down and will not be thrown the next time you press the 'Roll Dice' button. If you decide after the second throw in a turn that you don't want to keep the same dice before the third throw then you can click them again and they will move back to the table and be thrown in the third throw.</p>
+            
+                <h2>Upper section combinations</h2>
+                <ul>
+                    <li><strong>Ones:</strong> Get as many ones as possible.</li>
+                    <li><strong>Twos:</strong> Get as many twos as possible.</li>
+                    <li><strong>Threes:</strong> Get as many threes as possible.</li>
+                    <li><strong>Fours:</strong> Get as many fours as possible.</li>
+                    <li><strong>Fives:</strong> Get as many fives as possible.</li>
+                    <li><strong>Sixes:</strong> Get as many sixes as possible.</li>
+                </ul>
+                <p>For the six combinations above the score for each of them is the sum of dice of the right kind. E.g. if you get 1,3,3,3,5 and you choose Threes you will get 3*3 = 9 points. The sum of all the above combinations is calculated and if it is 63 or more, the player will get a bonus of 35 points. On average a player needs three of each to reach 63, but it is not required to get three of each exactly, it is perfectly OK to have five sixes, and zero ones for example, as long as the sum is 63 or more the bonus will be awarded.</p>
+             </div>
         </div>
-        <button class="button" id="roll-button">Roll Dice</button>
-        <p>Rolls Left: <span id="rollsLeft">3</span></p>
-        <div>Total: <span id="total">0</span></div>
-        </div>
+        
         <div class="column">
         <table>
             <tr>
                 <th>Blank</th>
                 <th>Player 1</th>
+                <th>Player 2</th>
             </tr>
             <tr>
                 <td>Ones</td>
-                <td id="ones"></button></td>
+                <td><span class="tab" id="ones" onclick="lockScore('ones')"></span></td>
+                <td><span id="ones1"></span></td>
             </tr>
             <tr>
                 <td>Twos</td>
-                <td id="twos"></td>
+                <td><span class="tab" id="twos" onclick="lockScore('twos')"></span></td>
+                <td><span id="twos1"></span></td>
             </tr>
             <tr>
                 <td>Threes</td>
-                <td id="threes"></td>
+                <td><span class="tab" id="threes" onclick="lockScore('threes')"></span></td>
+                <td><span id="threes1"></span></td>
             </tr>
             <tr>
                 <td>Fours</td>
-                <td id="fours"></td>
+                <td><span class="tab" id="fours" onclick="lockScore('fours')"></span></td>
+                <td><span id="fours1"></span></td>
             </tr>
             <tr>
                 <td>Fives</td>
-                <td id="fives"></td>
+                <td><span class="tab" id="fives" onclick="lockScore('fives')"></span></td>
+                <td><span id="fives1"></span></td>
             </tr>
             <tr>
                 <td>Sixes</td>
-                <td id="sixes"></td>
+                <td><span class="tab" id="sixes" onclick="lockScore('sixes')"></span></td>
+                <td><span id="sixes1"></span></td>
             </tr>
             <tr>
                 <td>Sum</td>
-                <td id="sum"></td>
+                <td><span id="sum"></span></td>
+                <td><span id="sum1"></span></td>
             </tr>
             <tr>
                 <td>Bonus</td>
-                <td id="bonus"></td>
+                <td><span id="bonus"></span></td>
+                <td><span id="bonus1"></span></td>
             </tr>
             <tr>
                 <td>Three of a kind</td>
-                <td id="threeKind"></td>
+                <td><span class="tab" id="threeKind" onclick="lockScore('threeKind')"></span></td>
+                <td><span class="tab" id="threeKind1"></span></td>
             </tr>
             <tr>
                 <td>Four of a kind</td>
-                <td id="fourKind"></td>
+                <td><span class="tab" id="fourKind" onclick="lockScore('fourKind')"></span></td>
+                <td><span class="tab" id="fourKind1"></span></td>
             </tr>
             <tr>
                 <td>Full house</td>
-                <td id="fullHouse"></td>
+                <td><span class="tab" id="fullHouse" onclick="lockScore('fullHouse')"></span></td>
+                <td><span class="tab" id="fullHouse1"></span></td>
             </tr>
             <tr>
                 <td>Small Straight</td>
-                <td id="sStraight"></td>
+                <td><span class="tab" id="smallStraight" onclick="lockScore('smallStraight')"></span></td>
+                <td><span class="tab" id="smallStraight1"></span></td>
             </tr>
             <tr>
                 <td>Large Straight</td>
-                <td id="lStraight"></td>
+                <td><span class="tab" id="largeStraight" onclick="lockScore('largeStraight')"></span></td>
+                <td><span class="tab" id="largeStraight1"></span></td>
             </tr>
             <tr>
                 <td>Chance</td>
-                <td id="chance"></td>
+                <td><span class="tab" id="chance" onclick="lockScore('chance')"></span></td>
+                <td><span class="tab" id="chance1"></span></td>
             </tr>
             <tr>
                 <td>YAHTZEE</td>
-                <td id="yatzy"></td>
+                <td><span class="tab" id="yatzy" onclick="lockScore('yatzy')"></span></td>
+                <td><span class="tab" id="yatzy1"></span></td>
             </tr>
             <tfoot>
             <tr>
                 <td><strong> TOTAL POINTS</strong></td>
-                <td>0</td>
+                <td><span id="totalPoints"></span></td>
+                <td><span id="totalPoints1"></span></td>
             </tr>
             </tfoot>
+            </table>
+
+        <div><h2>Lower section combinations</h2>
+            <ul>
+                <li><strong>Three of a kind:</strong> Get three dice with the same number. Points are the sum all dice (not just the three of a kind).</li>
+                <li><strong>Four of a kind:</strong> Get four dice with the same number. Points are the sum all dice (not just the four of a kind).</li>
+                <li><strong>Full house:</strong> Get three of a kind and a pair, e.g. 1,1,3,3,3 or 3,3,3,6,6. Scores 25 points.</li>
+                <li><strong>Small straight:</strong> Get four sequential dice, 1,2,3,4 or 2,3,4,5 or 3,4,5,6. Scores 30 points.</li>
+                <li><strong>Large straight:</strong> Get five sequential dice, 1,2,3,4,5 or 2,3,4,5,6. Scores 40 points.</li>
+                <li><strong>Chance:</strong> You can put anything into chance, it's basically like a garbage can when you don't have anything else you can use the dice for. The score is simply the sum of the dice.</li>
+                <li><strong>YAHTZEE:</strong> Five of a kind. Scores 50 points. You can optionally get multiple Yahtzees, see below for details.</li>
+            </ul></div>
         </div>
         <script src="rules.js"></script>
     </body>
