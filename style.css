@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+
+h1 {
+  font-family: "Bungee Spice", cursive;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  text-size-adjust: 30px;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(MinecraftTen-VGORe.ttf);
+}
+
+.diceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 50px;
+  justify-content: left;
+}
+
+.die {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: aliceblue;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+}
+
+.selected {
+  background-color: yellow;
+}
+
+table {
+  align-items: center;
+  padding: 20px;
+  margin-left: 50px;
+  width: 40%;
+  border-collapse: collapse;
+  border-color: #000;
+  background-color: #f2eaea;
+  color: #000;
+}
+
+th,
+td {
+  width: 20px;
+  height: 10px;
+  text-size-adjust: 45px;
+  border: 1px solid #000;
+  padding: 4px;
+  text-align: center;
+}
+
+tfoot {
+  background-color: #0dd0f8;
+}
+
+button#roll-button {
+  background-color: #0dd0f8;
+  color: black;
+  border: #000;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  width: 150px;
+  height: 50px;
+}
+
+#total {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(backg.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.tab {
+  display: block;
+  margin: 0 auto;
+}
+
+.rules {
+  padding-top: 200px;
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.column-dice {
+  float: right;
+  height: max-content;
+  width: 48.5%;
+  padding: 10px;
+  align-self: center;
+  gap: 10%;
+  column-count: 1;
+}
+.column-table {
+  float: left;
+  height: max-content;
+  width: 48.5%;
+  padding: 10px;
+  align-self: center;
+  gap: 10%;
+  column-count: 1;
+}
+
+.activePlayer {
+  border: 2px solid blue;
+  background-color: lightblue;
+}
+
+#playerTurn {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 10px;
+}
+
+/* button {
+    background-color: #146400;
+    border: none;
+    width: 100px;
+    height: 150px;
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
+    padding: 20px;
+} */
+
+/* .column {
+    float: left;
+    height: max-content;
+    width: 48.5%;
+    padding: 10px;     
+    align-self: center;
+    gap: 10%;
+    column-count: 1;
+} */
+
+/* .die {
+    width: 50px;
+    height: 100px;
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px;
+    background-image: url('dice2.png'); 
+    background-size: 600% 100%;
+}
+
+.dice-container {
+    float: right;
+    width: 100px; 
+    height: 100px auto;
+    padding: 20px;
+} */
+
+/* .rolling {
+    animation: roll 1s steps(6) infinite;
+} */
+
+/* @keyframes roll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -600% 0;
+    }
+} */
